@@ -14,10 +14,57 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+gem 'haml-rails'
 gem 'devise'
-
-# Use jquery as the JavaScript library
+gem 'kaminari'
+gem 'carrierwave'
+gem 'carrierwave_direct'
+gem 'jquery-validation-rails'
+gem 'jquery-ui-rails'
 gem 'jquery-rails'
+gem 'icalendar'
+gem 'acts_as_taggable_on'
+
+
+# API gems
+gem 'grape'
+gem 'grape-swagger'
+gem 'grape-swagger-ui'
+gem 'roar-rails'
+gem 'grape-kaminari'
+gem "sentry-raven"
+gem 'rest-client'
+gem 'domainatrix'
+
+group :production, :remote_development do
+  #heroku dependencies
+  gem 'rails_12factor'
+  gem 'newrelic_rpm'
+end
+
+gem "letter_opener", :group => :development
+
+group :test, :development do
+  # for the sidekiq monitoring app
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'tilt', '1.3.3'
+  gem 'pry'
+  # gem 'pry-debugger'
+  gem 'selenium-webdriver', '~> 2.39.0'
+  gem "multi_json", "~> 1.8.2"
+  gem 'poltergeist', :git => "https://github.com/jonleighton/poltergeist"
+  gem 'simplecov', :require => false
+  gem 'simplecov-rcov', :require => false
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'rspec-given'
+  gem 'rspec-rails', '~> 2.0'
+  gem 'rspec-sidekiq'
+  gem 'capybara'
+  gem 'launchy'
+end
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
